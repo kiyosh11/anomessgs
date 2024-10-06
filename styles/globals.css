@@ -1,0 +1,29 @@
+:root {
+--font-noto-sans-jp: 'Noto Sans JP', sans-serif;
+}
+
+html,
+body {
+padding: 0;
+margin: 0;
+font-family: var(--font-noto-sans-jp);
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+* {
+box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+html {
+color-scheme: dark;
+}
+body {
+color: white;
+background: black;
+}
+}
