@@ -1,0 +1,201 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a2e;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 50px; 
+}
+
+.messageBox {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 153, 255, 0.3);
+  width: 90%;
+  max-width: 600px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.messageBox:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 153, 255, 0.5);
+}
+
+.messageBox h1 {
+  color: #00fff5;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.messageBox textarea {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #00fff5;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  resize: none;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.messageBox textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 255, 245, 0.5);
+}
+
+.messageBox textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.messageBox button {
+  width: 100%;
+  background: #00fff5;
+  color: #1a1a2e;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.messageBox button:hover:not(:disabled) {
+  background: #7ee8fa;
+  box-shadow: 0 0 15px rgba(126, 232, 250, 0.5);
+  transform: translateY(-2px);
+}
+
+.messageBox button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.floatingIcons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.icon {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(20px, -15px) rotate(5deg); }
+  50% { transform: translate(-15px, -25px) rotate(-5deg); }
+  75% { transform: translate(-25px, 10px) rotate(3deg); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(-20px, 15px) rotate(-3deg); }
+  66% { transform: translate(15px, -20px) rotate(5deg); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(25px, 25px) rotate(10deg); }
+}
+
+.icon:nth-child(3n) { animation: float-1 20s infinite; }
+.icon:nth-child(3n+1) { animation: float-2 25s infinite; }
+.icon:nth-child(3n+2) { animation: float-3 30s infinite; }
+
+.icon:nth-child(1) { top: 5%; left: 5%; }
+.icon:nth-child(2) { top: 15%; right: 10%; }
+.icon:nth-child(3) { bottom: 20%; left: 15%; }
+.icon:nth-child(4) { bottom: 10%; right: 5%; }
+.icon:nth-child(5) { top: 30%; left: 25%; }
+.icon:nth-child(6) { top: 40%; right: 30%; }
+.icon:nth-child(7) { bottom: 35%; left: 40%; }
+.icon:nth-child(8) { bottom: 25%; right: 20%; }
+.icon:nth-child(9) { top: 50%; left: 10%; }
+.icon:nth-child(10) { top: 60%; right: 45%; }
+.icon:nth-child(11) { bottom: 50%; left: 60%; }
+.icon:nth-child(12) { bottom: 15%; right: 35%; }
+.icon:nth-child(13) { top: 70%; left: 55%; }
+.icon:nth-child(14) { top: 80%; right: 60%; }
+.icon:nth-child(15) { bottom: 70%; left: 75%; }
+
+.feedback {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #666;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer a {
+  color: #1a73e8; 
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .messageBox {
+    width: 85%;
+    padding: 1.5rem;
+  }
+
+  .messageBox h1 {
+    font-size: 2rem;
+  }
+
+  .messageBox textarea {
+    height: 150px;
+  }
+
+  .messageBox button {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .footer {
+    font-size: 12px;
+    padding: 8px;
+  }
+            }
